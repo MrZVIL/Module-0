@@ -21,6 +21,7 @@ class Graph:
 
 
 def simple(N):
+    """Generate N random 2d-points labeled by a vertical boundary at x_1 = 0.5"""
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -30,6 +31,7 @@ def simple(N):
 
 
 def diag(N):
+    """Generate N random 2d-points labeled by a diagonal boundary at x_2 + x_2 = 0,5"""
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -39,6 +41,10 @@ def diag(N):
 
 
 def split(N):
+    """
+    Generate N random 2d-points labeled by two vertical boundaries.
+    Points with x_1 in [0.2; 0.8] belong to class 0; all others belong to class 1.
+    """
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -48,6 +54,12 @@ def split(N):
 
 
 def xor(N):
+    """
+    Generate N random 2d-points labeled by two linear boundaries.
+    Points with x_1 < 0.5 and x_2 > 0.5 belong to class 1;
+    points with x_1 > 0.5 and x_2 < 0.5 belong to class 1;
+    all others belong to class 0.
+    """
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -57,6 +69,12 @@ def xor(N):
 
 
 def circle(N):
+    """
+    Generate N random 2d-points labeled by circle boundary.
+
+    Points lie in the circle with center in (0;0) and radius=sqrt(0.1) belong to class 1;
+    all others belong to class 0.
+    """
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -67,6 +85,12 @@ def circle(N):
 
 
 def spiral(N):
+    """
+    Generate N spiral 2d-points.
+
+    Points lie in the inner spiral belong to class 0;
+    all others belong to class 1.
+    """
 
     def x(t):
         return t * math.cos(t) / 20.0
