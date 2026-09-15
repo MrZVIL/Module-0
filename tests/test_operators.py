@@ -113,7 +113,6 @@ def test_sigmoid(a: float) -> None:
     assert_close(1 - sigmoid(a), sigmoid(-a))
     assert_close(sigmoid(0), 0.5)
     assert sigmoid(a) < sigmoid(a + 0.5)
-    
 
 
 @pytest.mark.task0_2
@@ -139,7 +138,7 @@ def test_distribute(a: float, b: float, c: float) -> None:
     r"""Write a test that ensures that your operators distribute, i.e.
     :math:`z \times (x + y) = z \times x + z \times y`
     """
-    assert_close(mul(add(a, b), c), add(mul(a,c), mul(b,c)))
+    assert_close(mul(add(a, b), c), add(mul(a, c), mul(b, c)))
 
 
 @pytest.mark.task0_2

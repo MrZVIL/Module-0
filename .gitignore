@@ -130,3 +130,10 @@ dmypy.json
 *.\#*
 data/
 pyodide
+
+# Local formatting tools and editor settings
+/.flake8
+/.vscode/
+/DEVELOPMENT.md
+/Module-0.code-workspace
+/requirements-dev.txt
